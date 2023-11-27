@@ -1,0 +1,43 @@
+{
+    "task": "segmentation",
+    "transform": {
+        "__version__": "1.3.1",
+        "transform": {
+            "__class_fullname__": "Compose",
+            "p": 1.0,
+            "transforms": [
+                {
+                    "__class_fullname__": "Resize",
+                    "always_apply": true,
+                    "p": 1,
+                    "height": 256,
+                    "width": 256,
+                    "interpolation": 1
+                },
+                {
+                    "__class_fullname__": "ToFloat",
+                    "always_apply": false,
+                    "p": 1.0,
+                    "max_value": 255
+                },
+                {
+                    "__class_fullname__": "ToTensorV2",
+                    "always_apply": true,
+                    "p": 1.0,
+                    "transpose_mask": false
+                }
+            ],
+            "bbox_params": null,
+            "keypoint_params": null,
+            "additional_targets": {
+                "image": "image",
+                "depth_image": "image"
+            },
+            "is_check_shapes": true
+        }
+    },
+    "image_threshold": 0.28319674730300903,
+    "pixel_threshold": 0.06827045977115631,
+    "min": -0.18330875039100647,
+    "max": 8.203405380249023
+}
