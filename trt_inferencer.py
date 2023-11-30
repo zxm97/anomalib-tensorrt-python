@@ -478,6 +478,10 @@ class TrtInferencer():
         boxes = np.stack(boxes) if boxes else np.empty((0, 4))
         return boxes
 
+    def destroy(self):
+        del self.engine
+
+
 if __name__ == "__main__":
 
     # trt_inferencer = TrtInferencer(path="weights/efficient_ad.engine", metadata="data/metadata.json", batch_size=1, dynamic_batch = True)
@@ -528,3 +532,4 @@ if __name__ == "__main__":
             save_path_full = Path(save_folder).joinpath(dirname_class, image_name)
             visualizer.save(file_path=save_path_full, image=output)
 
+    trt_inferencer.destroy()
