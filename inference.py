@@ -97,3 +97,4 @@ if __name__ == "__main__":
                 save_path_full = Path(args.output).joinpath(dirname_class, image_name)
                 visualizer.save(file_path=save_path_full, image=output)
 
+    trt_inferencer.destroy()
